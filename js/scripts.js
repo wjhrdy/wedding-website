@@ -233,6 +233,7 @@ $(document).ready(function () {
     var params = getParams(window.location.href);
     if (params.code) {
         $('#invite_code').val(params.code);
+        window.history.replaceState({}, document.title, '/');
     }
 
 });
