@@ -232,8 +232,11 @@ $(document).ready(function () {
 
     var params = getParams(window.location.href);
     if (params.code) {
-        $('#invite_code').val(params.code);
-        window.history.replaceState({}, document.title, '/');
+        if (MD5(params.code) == 'fc0e3f54e4e4d5cdd480797ad7f35633'){
+            $('#invite_code').val(params.code);
+            $('#invite_code').parent().hide();
+            window.history.replaceState({}, document.title, '/');
+        }   
     }
 
 });
