@@ -184,23 +184,23 @@ $(document).ready(function () {
         },
         data: {
             // Event title
-            title: "Ram and Antara's Wedding",
+            title: "Katie and Willy's wedding",
 
             // Event start date
-            start: new Date('Nov 27, 2017 10:00'),
+            start: new Date('Nov 2, 2019 18:00'),
 
             // Event duration (IN MINUTES)
             // duration: 120,
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('Nov 29, 2017 00:00'),
+            end: new Date('Nov 2, 2019 23:59'),
 
             // Event Address
-            address: 'ITC Fortune Park Hotel, Kolkata',
+            address: '950 Peterson St, Raleigh, NC 27610',
 
             // Event Description
-            description: "We can't wait to see you on our big day. For any queries or issues contact Mr. Amit Roy at +91 9435021804 or +91 7086018971."
+            description: "https://bubs.club We can't wait to see you on our big day. For any queries or issues contact Willy at +1 (919) 214-9573. "
         }
     });
 
@@ -214,11 +214,10 @@ $(document).ready(function () {
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
-        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
-            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
+        if (MD5($('#invite_code').val()) !== 'fc0e3f54e4e4d5cdd480797ad7f35633') {
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
         } else {
-            $.post('https://script.google.com/macros/s/AKfycbzUqz44wOat0DiGjRV1gUnRf4HRqlRARWggjvHKWvqniP7eVDG-/exec', data)
+            $.post('https://script.google.com/macros/s/AKfycbwjz6S87dnIbxlzv0K017C8ehFP0SksQaNOZ_0x/exec', data)
                 .done(function (data) {
                     console.log(data);
                     $('#alert-wrapper').html('');
@@ -246,20 +245,6 @@ function initMap() {
 
     var marker = new google.maps.Marker({
         position: itc_kol,
-        map: map
-    });
-}
-
-function initBBSRMap() {
-    var la_fiesta = {lat: 35.7603985, lng: -78.6250251};
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 15,
-        center: la_fiesta,
-        scrollwheel: false
-    });
-
-    var marker = new google.maps.Marker({
-        position: la_fiesta,
         map: map
     });
 }
