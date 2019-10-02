@@ -27,6 +27,7 @@
   "dependencies": {
     "animate.css": "^3.5.2",
     "font-awesome": "^4.7.0",
+    "paymentfont": "^1.2.5",
     "waypoints": "^4.0.1"
   }
 }
