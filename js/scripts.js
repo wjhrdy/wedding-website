@@ -231,12 +231,16 @@ $(document).ready(function () {
     });
 
     var params = getParams(window.location.href);
-    if (params.code) {
-        if (MD5(params.code) == 'fc0e3f54e4e4d5cdd480797ad7f35633'){
-            $('#invite_code').val(params.code);
+    var storedCode = localStorage.getItem('invite_code');
+    var inviteCode = params.code||storedCode
+
+    if (inviteCode) {
+        if (MD5(inviteCode) == 'fc0e3f54e4e4d5cdd480797ad7f35633'){
+            $('#invite_code').val(inviteCode);
             $('#invite_code').parent().hide();
+            localStorage.setItem('invite_code', inviteCode);
             window.history.replaceState({}, document.title, '/');
-        }   
+        }
     }
 
 });
